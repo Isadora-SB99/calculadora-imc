@@ -26,8 +26,8 @@ public class HomeController {
         PageRequest paginacao = PageRequest.of(0, 5, sort);
 
 
-//        Page<IMC> listaImc = imcRepository.findAll(paginacao);
-        List<IMC> listaImc = imcRepository.findAll();
+        Page<IMC> listaImc = imcRepository.findAll(paginacao);
+//        List<IMC> listaImc = imcRepository.findAll();
         model.addAttribute("listaImc", listaImc);
         return "home";
     }
