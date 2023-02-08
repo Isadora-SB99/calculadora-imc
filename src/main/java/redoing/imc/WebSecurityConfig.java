@@ -72,7 +72,7 @@ public class WebSecurityConfig {
     @Bean
     public UserDetailsManager users(DataSource dataSource) {
         UserDetails user = User.builder()
-                .username("user")
+                .username("isadora")
                 .password(passwordEncoder().encode("password"))
                 .roles("USER")
                 .build();
