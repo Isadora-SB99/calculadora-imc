@@ -10,16 +10,28 @@
         }
 
         .logo {
-            /*font-family: 'Handlee', cursive;*/
             font-size: 2.5rem;
         }
-    </style>
 
+        caption {
+            caption-side: top;
+            color: black;
+            text-align: center;
+        }
+
+        table {
+            align-content: center;
+        }
+
+        tr, td {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.175);
+        }
+    </style>
 </head>
 
 <div th:fragment="menu">
 
-    <div class="logo-container p-3 d-flex justify-content-between">
+    <div class="logo-container mb-3 p-3 d-flex justify-content-between">
         <span class="logo">Cálculo de IMC</span>
         <span class="mt-3">
             <a class="text-light" sec:authorize="!isAuthenticated()" href="/login">login</a>
@@ -33,8 +45,8 @@
         <div class="col">
             <nav class="nav">
                 <a class="nav-link" th:href="@{/home}">Home</a>
-<!--                <a class="nav-link" th:href="@{/imc/novo}">Novo cálculo</a>-->
                 <a class="nav-link" th:href="@{/imc/formulario}">Novo cálculo</a>
+                <a class="nav-link" th:href="@{/usuario/imc}">Meus cálculos</a>
             </nav>
         </div>
     </div>

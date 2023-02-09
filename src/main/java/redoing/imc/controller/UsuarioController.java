@@ -6,7 +6,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.w3c.dom.stylesheets.LinkStyle;
 import redoing.imc.model.IMC;
 import redoing.imc.repository.ImcRepository;
 
@@ -23,7 +22,6 @@ public class UsuarioController {
     @GetMapping("/imc")
     public String home(Model model, Principal principal){
         List<IMC> listaIMC = imcRepository.findAllByUsuario(principal.getName());
-//        List<IMC> listaIMC = imcRepository.findAll();
         model.addAttribute("listaImc", listaIMC);
         return "usuario/home";
     }

@@ -8,10 +8,8 @@
 
 <div th:replace="~{base::menu}"></div>
 
-<!--<div class="card mb-3"></div>&lt;!&ndash;só pra dar um espaco&ndash;&gt;-->
-
     <div class="container">
-        <div class="card mb-3 col-6 col-sm-8" th:each="imc : ${listaImc}">
+        <div class="card mb-3 mt-3 col-6 col-sm-8" th:each="imc : ${listaImc}">
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-5">IMC calculado: <span th:text="${imc.imcCalculado}"></span></div>

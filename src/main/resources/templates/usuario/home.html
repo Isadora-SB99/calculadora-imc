@@ -1,46 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head th:replace="~{base::head}">
-    <title>Title</title>
+    <title>Usuário</title>
     <style>
-        caption{
+        caption {
             caption-side: top;
             color: black;
-            /*text-decoration-color: black;*/
             text-align: center;
         }
 
-        table{
+        table {
             align-content: center;
-            /*text-align: center;*/
-            /*border: 1px solid black;*/
         }
 
-        tr, td{
+        tr, td {
             border-bottom: 1px solid rgba(0, 0, 0, 0.175);
         }
+
     </style>
 </head>
 <body>
     <div th:replace="~{base::menu}"></div>
 
     <div class="container">
-        <div class="card mb-3 col-6 col-sm-8" th:each="imc : ${listaImc}">
+
+        <div class="card mb-3 mt-3 col-6 col-sm-8" th:each="imc : ${listaImc}">
             <div class="card-body">
                 <div class="row">
-                    <div class="col-md-5">IMC calculado: <span th:text="${imc.imcCalculado}"></span></div>
-                    <div class="col-md-7">Data do cálculo: <span th:text="${#temporals.format(imc.dataCalculo, 'dd/MM/yyyy HH:mm')}">03/02/2023 14:06</span></div>
+                    <div class="col-md-2">Peso: <span th:text="${imc.peso}"></span></div>
+                    <div class="col-md-2">Altura: <span th:text="${imc.altura}"></span></div>
+                    <div class="col-md-3">IMC calculado: <span th:text="${imc.imcCalculado}"></span></div>
+                    <div class="col-md-5">
+                        Data do cálculo: <span th:text="${#temporals.format(imc.dataCalculo, 'dd/MM/yyyy HH:mm')}">03/02/2023 14:06</span>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="container">
         <div class="card mb-3 col-6 col-sm-4">
             <div class="card-body">
                 <div class="row">
-                    <table>
-                        <caption><strong>Valores médios para adultos</strong></caption>
+                    <table style="margin-left: 5px;">
+                        <caption style=""><strong>Valores médios para adultos</strong></caption>
                         <thead>
                         <tr>
                             <td><strong> IMC </strong></td>
@@ -50,39 +51,40 @@
 
                         <tbody>
                         <tr>
-                            <td> Abaixo de 18,5 </td>
-                            <td> Déficit de massa corporal </td>
+                            <td> Abaixo de 18,5</td>
+                            <td> Déficit de massa corporal</td>
                         </tr>
 
                         <tr>
-                            <td> Entre 18,5 e 24,9 </td>
-                            <td> Massa corporal normal </td>
+                            <td> Entre 18,5 e 24,9</td>
+                            <td> Massa corporal normal</td>
                         </tr>
 
                         <tr>
-                            <td> Entre 25 e 29,9 </td>
-                            <td> Sobrepeso </td>
+                            <td> Entre 25 e 29,9</td>
+                            <td> Sobrepeso</td>
                         </tr>
 
                         <tr>
-                            <td> Entre 30 e 34,9 </td>
-                            <td> Obesidade leve </td>
+                            <td> Entre 30 e 34,9</td>
+                            <td> Obesidade leve</td>
                         </tr>
 
                         <tr>
-                            <td> Entre 35 e 39,9 </td>
-                            <td> Obesidade média </td>
+                            <td> Entre 35 e 39,9</td>
+                            <td> Obesidade média</td>
                         </tr>
 
                         <tr>
-                            <td style="border-bottom: 1px solid white"> Mais de 40 </td>
-                            <td style="border-bottom: 1px solid white"> Obesidade mórbida </td>
+                            <td style="border-bottom: 1px solid white"> Mais de 40</td>
+                            <td style="border-bottom: 1px solid white"> Obesidade mórbida</td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
+
     </div>
 
 </body>

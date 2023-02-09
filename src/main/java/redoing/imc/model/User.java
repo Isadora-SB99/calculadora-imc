@@ -14,7 +14,6 @@ public class User {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user", fetch = FetchType.LAZY)
     private List<IMC> calculosIMC;
 
-
     public String getUsername() {
         return username;
     }
